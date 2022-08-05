@@ -5,17 +5,18 @@ import model.interfaces.IShape;
 
 import java.util.Stack;
 
-/**
- *     This is MVC class, it is data model for storing undo, redo shape(s).
- *     This class initiate at the beginning of the program so other classes are able to access it.
- */
-public class ShapeList{
+public class ShapeList {
+
     private Stack<IShape> shapeList = new Stack<>();
     private Stack<IShape> undoRedoShapeList = new Stack<>();
-    private Stack<Stack<IMovementObserver>> selectList = new Stack<>();
-    private Stack<Stack<IMovementObserver>> undoRedoSelectList = new Stack<>();
+    private Stack<Stack<IShape>> selectList = new Stack<>();
+    private Stack<Stack<IShape>> undoRedoSelectList = new Stack<>();
     private Stack<TwoPoint> movementList = new Stack<>();
     private Stack<TwoPoint> undoRedoMovementList = new Stack<>();
+    private Stack<IShape> clipboard = new Stack<>();
+    private Stack<Integer> pasteList = new Stack<>();
+    private Stack<Stack<IShape>> undoRedoPasteItem = new Stack<>();
+    private Stack<Stack<IShape>> undoRedoDeleteList = new Stack<>();
 
     public void addShape(IShape iShape) {
         shapeList.add(iShape);
@@ -30,11 +31,11 @@ public class ShapeList{
         return undoRedoShapeList;
     }
 
-    public Stack<Stack<IMovementObserver>> getSelectList() {
+    public Stack<Stack<IShape>> getSelectList() {
         return selectList;
     }
 
-    public Stack<Stack<IMovementObserver>> getUndoRedoSelectList() {
+    public Stack<Stack<IShape>> getUndoRedoSelectList() {
         return undoRedoSelectList;
     }
 
@@ -44,5 +45,21 @@ public class ShapeList{
 
     public Stack<TwoPoint> getUndoRedoMovementList() {
         return undoRedoMovementList;
+    }
+
+    public Stack<IShape> getClipboard() {
+        return clipboard;
+    }
+
+    public Stack<Integer> getPasteList() {
+        return pasteList;
+    }
+
+    public Stack<Stack<IShape>> getUndoRedoPasteItem() {
+        return undoRedoPasteItem;
+    }
+
+    public Stack<Stack<IShape>> getUndoRedoDeleteList() {
+        return undoRedoDeleteList;
     }
 }
