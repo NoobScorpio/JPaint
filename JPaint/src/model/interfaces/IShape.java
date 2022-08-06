@@ -1,5 +1,8 @@
 package model.interfaces;
 
+import model.Shape;
+import model.TwoPoint;
+
 /**
  * This is Abstract Factory Pattern
  * Sprint 1: draw() and clear() method added, Rectangle, Triangle and Ellipse classes implement this pattern
@@ -12,4 +15,6 @@ public interface IShape {
     int getLeftCornerY();
     int getWidth();
     int getHeight();
+    Shape getShape();
+    void update(TwoPoint twoPoint);
 }

@@ -1,5 +1,11 @@
 package model.commands;
 
+import model.ShapeList;
+import model.interfaces.ICommand;
+import model.interfaces.IShape;
+
+import java.util.Stack;
+
 public class CopyCommand implements ICommand {
 
     ShapeList shapeList;

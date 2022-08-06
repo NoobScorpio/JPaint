@@ -3,6 +3,7 @@ package model.commands;
 import model.*;
 import model.interfaces.ICommand;
 import model.interfaces.IMovementObserver;
+import model.interfaces.IShape;
 import model.interfaces.IStrategy;
 
 import java.util.Stack;
@@ -14,8 +15,8 @@ public class SelectCommand implements IStrategy, ICommand {
 
     private TwoPoint twoPoint;
     private ShapeList shapeList;
-    private Stack<Stack<IMovementObserver>> mySelectList;
-    private Stack<Stack<IMovementObserver>> myUndoRedoList;
+    private Stack<Stack<IShape>> mySelectList;
+    private Stack<Stack<IShape>> myUndoRedoList;
 
     public SelectCommand(TwoPoint twoPoint, ShapeList shapeList) {
         this.twoPoint = twoPoint;
