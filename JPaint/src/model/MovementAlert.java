@@ -1,6 +1,7 @@
 package model;
 
 import model.interfaces.IMovementObserver;
+import model.interfaces.IShape;
 
 import java.util.Stack;
 
