@@ -1,8 +1,6 @@
 package model;
 
-/**
- * This class is to store two start point and end point coordinate and calculate their left corner coordinate width and height
- */
+
 public class TwoPoint {
     private Point startPoint;
     private Point endPoint;

@@ -1,6 +1,5 @@
 package model;
 
-import model.interfaces.IMovementObserver;
 import model.interfaces.IShape;
 
 import java.util.Stack;
@@ -9,12 +8,13 @@ public class ShapeList {
 
     private Stack<IShape> shapeList = new Stack<>();
     private Stack<IShape> undoRedoShapeList = new Stack<>();
+    private Stack<IShape> clipboard = new Stack<>();
+    private Stack<Integer> pasteList = new Stack<>();
     private Stack<Stack<IShape>> selectList = new Stack<>();
     private Stack<Stack<IShape>> undoRedoSelectList = new Stack<>();
     private Stack<TwoPoint> movementList = new Stack<>();
     private Stack<TwoPoint> undoRedoMovementList = new Stack<>();
-    private Stack<IShape> clipboard = new Stack<>();
-    private Stack<Integer> pasteList = new Stack<>();
+
     private Stack<Stack<IShape>> undoRedoPasteItem = new Stack<>();
     private Stack<Stack<IShape>> undoRedoDeleteList = new Stack<>();
 

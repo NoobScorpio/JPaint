@@ -17,7 +17,6 @@ public class DeleteShape {
             removedObserver.clear();
             shapeList.getShapeList().remove(removedObserver);
         }
-        // System.out.println(shapeList.getShapeList().size());
         shapeList.getUndoRedoDeleteList().add(shapeList.getSelectList().pop());
         shapeList.getShapeList().forEach(shape -> shape.draw());
     }

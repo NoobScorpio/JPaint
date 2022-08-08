@@ -36,7 +36,7 @@ public class MouseListener extends MouseAdapter {
         MouseModeController controller = new MouseModeController();
         Point endPoint = new Point(e.getX(), e.getY());
         TwoPoint twoPoint = new TwoPoint(startPoint, endPoint);
-        Shape newShape = new Shape.ShapeBuilder()
+        Shape newShape = new ShapeBuilder()
                 .setPaintCanvas(paintCanvas)
                 .setTwoPoint(twoPoint)
                 .setPrimaryColor(appState.getActivePrimaryColor().getColor())

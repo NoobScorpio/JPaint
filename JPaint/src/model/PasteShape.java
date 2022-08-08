@@ -27,7 +27,7 @@ public class PasteShape {
             int y1 = observer.getShape().getTwoPoint().getStartPoint().getY() - 100;
             int x2 = observer.getShape().getTwoPoint().getEndPoint().getX() - 100;
             int y2 = observer.getShape().getTwoPoint().getEndPoint().getY() - 100;
-            Shape shape = new Shape.ShapeBuilder()
+            Shape shape = new ShapeBuilder()
                     .setPaintCanvas(observer.getShape().getPaintCanvas())
                     .setTwoPoint(new TwoPoint(new Point(x1, y1), new Point(x2, y2)))
                     .setPrimaryColor(observer.getShape().getPrimaryColor())
@@ -66,7 +66,7 @@ public class PasteShape {
         }
         myPasteList.add(myUndoRedoPasteItem.lastElement().size());
         for (IShape observer : myUndoRedoPasteItem.lastElement()) {
-            shapeList.getShapeList().add((IShape) observer);
+            shapeList.getShapeList().add(observer);
         }
     }
 }

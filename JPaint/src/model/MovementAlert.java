@@ -1,14 +1,10 @@
 package model;
 
-import model.interfaces.IMovementObserver;
 import model.interfaces.IShape;
 
 import java.util.Stack;
 
-/**
- * This is Observer Pattern
- * It used by SelectCommand to addObserver and used by MoveCommand to update new coordinate to all observers
- */
+
 public class MovementAlert {
 
     private Stack<IShape> observers;
@@ -47,7 +43,6 @@ public class MovementAlert {
     private void notifyAllObservers(TwoPoint twoPoint, ShapeList shapeList) {
         shapeList.getShapeList().forEach(observer -> observer.clear());
         observers.forEach(observer -> observer.update(twoPoint));
-//        shapeList.getShapeList().forEach(shape -> shape.draw());
         shapeList.getShapeList().forEach(observer -> observer.draw());
         for (IShape observer : shapeList.getSelectList().lastElement()) {
             OutlineDecorator outline = new OutlineDecorator();
