@@ -1,8 +1,6 @@
 package model;
 
-/**
- * This class is to store two start point and end point coordinate and calculate their left corner coordinate width and height
- */
+
 public class TwoPoint {
     private Point startPoint;
     private Point endPoint;
@@ -15,7 +13,21 @@ public class TwoPoint {
         this.startPoint = startPoint;
         this.endPoint = endPoint;
     }
+    public Point getMinXY() {
+        int mouseStartX = Math.min(this.startPoint.getX(), this.endPoint.getX());
+        int mouseStartY = Math.min(this.startPoint.getY(), this.endPoint.getY());
 
+        Point point = new Point(mouseStartX, mouseStartY);
+        return point;
+    }
+
+    public Point getMaxXY() {
+        int mouseEndX = Math.max(this.startPoint.getX(), this.endPoint.getX());
+        int mouseEndY = Math.max(this.startPoint.getY(), this.endPoint.getY());
+
+        Point point = new Point(mouseEndX, mouseEndY);
+        return point;
+    }
     public Point getStartPoint() {
         return startPoint;
     }

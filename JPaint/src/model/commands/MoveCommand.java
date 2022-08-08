@@ -11,9 +11,6 @@ import model.interfaces.IStrategy;
 
 import java.util.Stack;
 
-/**
- * The main purpose of MoveCommand is to update new coordinate to all observers
- */
 public class MoveCommand implements IStrategy, ICommand {
 
     private TwoPoint twoPoint;

@@ -1,10 +1,6 @@
 package model;
 
-/**
- *     This is class for storing coordinate, other class are able to derive it through getter
- *     and use it for creating shape
- *     Sprint 2: Setter implemented for observer pattern, it will update the new coordinate once shape get notified
- */
+
 public class Point {
 
     private int x;
