@@ -38,3 +38,7 @@
 
 ### MVC Pattern Implementation
 ![alt text](UMLS/mvc-pattern.png "UML") <br>
+
+# Sprint 4
+### In this update i have added group and ungroup properties and due to which there are following entities added to the UML
+![alt text](UMLS/update-4.png "UML") <br>

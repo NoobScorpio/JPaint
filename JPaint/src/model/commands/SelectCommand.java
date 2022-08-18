@@ -2,7 +2,6 @@ package model.commands;
 
 import model.*;
 import model.interfaces.ICommand;
-import model.interfaces.IMovementObserver;
 import model.interfaces.IShape;
 import model.interfaces.IStrategy;
 
@@ -25,9 +24,9 @@ public class SelectCommand implements IStrategy, ICommand {
     public void run() {
         mySelectList = shapeList.getSelectList();
         myUndoRedoList = shapeList.getUndoRedoSelectList();
-        movementAlert = new MovementAlert();
-        movementAlert.addObserver(shapeList, twoPoint);
-        movementAlert.updateCurrentObserver(shapeList);
+        movementAlert = new MovementAlert(shapeList);
+        movementAlert.addObserver(twoPoint);
+        movementAlert.updateCurrentObserver();
         CommandHistory.add(this);
     }
 
@@ -37,7 +36,7 @@ public class SelectCommand implements IStrategy, ICommand {
             return;
         }
         myUndoRedoList.add(mySelectList.pop());
-        movementAlert.updateCurrentObserver(shapeList);
+        movementAlert.updateCurrentObserver();
     }
 
     @Override
@@ -46,6 +45,6 @@ public class SelectCommand implements IStrategy, ICommand {
             return;
         }
         mySelectList.add(myUndoRedoList.pop());
-        movementAlert.updateCurrentObserver(shapeList);
+        movementAlert.updateCurrentObserver();
     }
 }

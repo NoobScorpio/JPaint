@@ -2,13 +2,15 @@ package model;
 
 import model.interfaces.IShape;
 
+import java.util.Stack;
+
 public class OutlineDecorator {
 
-    private OutlineDrawer outlineDrawer;
+    protected OutlineDrawer outlineDrawer;
 
-    void draw(IShape shape) {
+    public void draw(Stack<IShape> groupList) {
         outlineDrawer = new OutlineDrawer();
-        outlineDrawer.draw(shape);
+        outlineDrawer.draw(groupList);
     }
 
 }

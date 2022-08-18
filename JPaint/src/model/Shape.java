@@ -4,18 +4,16 @@ import view.interfaces.PaintCanvasBase;
 
 import java.awt.*;
 
-/**
- *     This is builder pattern for shape builder, and this is a class for storing parameters so other class are
- *     able to access it through getter.
- */
 public class Shape {
 
-    private PaintCanvasBase paintCanvas;
-    private TwoPoint twoPoint;
-    private Color primaryColor;
-    private Color secondaryColor;
-    private ShapeType shapeType;
-    private ShapeShadingType shadingType;
+    final  PaintCanvasBase paintCanvas;
+    final  private TwoPoint twoPoint;
+    final private Color primaryColor;
+    final private Color secondaryColor;
+    final private ShapeType shapeType;
+    final private ShapeShadingType shadingType;
+
+    private boolean isGroup = false;
 
     public Shape(PaintCanvasBase paintCanvas, TwoPoint twoPoint, Color primaryColor,
                  Color secondaryColor, ShapeType shapeType, ShapeShadingType shadingType) {
@@ -49,5 +47,13 @@ public class Shape {
 
     public ShapeShadingType getShadingType() {
         return shadingType;
+    }
+
+    public boolean isGroup() {
+        return isGroup;
+    }
+
+    public void groupSwitcher() {
+        isGroup = !isGroup;
     }
 }
