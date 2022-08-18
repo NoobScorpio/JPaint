@@ -6,10 +6,10 @@ import model.interfaces.IShape;
 public class GroupShape {
 
     ShapeList shapeList;
-    private Stack<Stack<IShape>> mySelectList;
-    private Stack<Stack<IShape>> myGroupList;
-    private Stack<Stack<IShape>> myUndoRedoList;
-    private OutlineDecorator outlineDecorator;
+    final private Stack<Stack<IShape>> mySelectList;
+    final private Stack<Stack<IShape>> myGroupList;
+    final private Stack<Stack<IShape>> myUndoRedoList;
+    final private OutlineDecorator outlineDecorator;
 
     public GroupShape(ShapeList shapeList) {
         this.shapeList = shapeList;
@@ -50,7 +50,7 @@ public class GroupShape {
     }
 
     public void removeFromGroup() {
-        if (mySelectList.isEmpty() || mySelectList.lastElement().lastElement().getShape().isGroup() == false) return;
+        if (mySelectList.isEmpty() || !mySelectList.lastElement().lastElement().getShape().isGroup()) return;
         IShape lastShape = mySelectList.lastElement().lastElement();
         removeList(lastShape);
         shapeList.redraw();

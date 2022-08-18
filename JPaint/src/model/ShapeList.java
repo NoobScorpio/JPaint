@@ -6,18 +6,18 @@ import java.util.Stack;
 
 public class ShapeList {
 
-    private Stack<IShape> shapeList = new Stack<>();
-    private Stack<IShape> undoRedoShapeList = new Stack<>();
-    private Stack<Stack<IShape>> selectList = new Stack<>();
-    private Stack<Stack<IShape>> undoRedoSelectList = new Stack<>();
-    private Stack<TwoPoint> movementList = new Stack<>();
-    private Stack<TwoPoint> undoRedoMovementList = new Stack<>();
-    private Stack<IShape> clipboard = new Stack<>();
-    private Stack<Integer> pasteList = new Stack<>();
-    private Stack<Stack<IShape>> undoRedoPasteItem = new Stack<>();
-    private Stack<Stack<IShape>> undoRedoDeleteList = new Stack<>();
-    private Stack<Stack<IShape>> groupList = new Stack<>();
-    private Stack<Stack<IShape>> undoRedoGroupList = new Stack<>();
+    final private Stack<IShape> shapeList = new Stack<>();
+    final private Stack<IShape> undoRedoShapeList = new Stack<>();
+    final private Stack<Stack<IShape>> selectList = new Stack<>();
+    final private Stack<Stack<IShape>> undoRedoSelectList = new Stack<>();
+    final private Stack<TwoPoint> movementList = new Stack<>();
+    final private Stack<TwoPoint> undoRedoMovementList = new Stack<>();
+    final private Stack<IShape> clipboard = new Stack<>();
+    final private Stack<Integer> pasteList = new Stack<>();
+    final private Stack<Stack<IShape>> undoRedoPasteItem = new Stack<>();
+    final private Stack<Stack<IShape>> undoRedoDeleteList = new Stack<>();
+    final private Stack<Stack<IShape>> groupList = new Stack<>();
+    final private Stack<Stack<IShape>> undoRedoGroupList = new Stack<>();
 
     public void addShape(IShape iShape) {
         shapeList.add(iShape);

@@ -2,7 +2,6 @@ package model.commands;
 
 import model.*;
 import model.interfaces.ICommand;
-import model.interfaces.IMovementObserver;
 import model.interfaces.IShape;
 import model.interfaces.IStrategy;
 

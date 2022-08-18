@@ -3,7 +3,6 @@ package model.commands;
 import model.Shape;
 import model.ShapeFactory;
 import model.ShapeList;
-import model.commands.CommandHistory;
 import model.interfaces.ICommand;
 import model.interfaces.IShape;
 import model.interfaces.IStrategy;

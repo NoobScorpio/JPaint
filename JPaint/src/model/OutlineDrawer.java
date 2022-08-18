@@ -26,23 +26,23 @@ public class OutlineDrawer {
             Point newPoint = new Point(s.getShape().getTwoPoint().getStartPoint().getX(),
                     s.getShape().getTwoPoint().getEndPoint().getY());
 
-            int startArray[] = new int[3];
-            int endArray[] = new int[3];
+            int[] startArray = new int[3];
+            int[] endArray = new int[3];
 
             startArray[0] = s.getShape().getTwoPoint().getStartPoint().getX();
             startArray[1] = s.getShape().getTwoPoint().getEndPoint().getX();
-            startArray[2] = (int) newPoint.getX();
+            startArray[2] =  newPoint.getX();
 
             endArray[0] = s.getShape().getTwoPoint().getStartPoint().getY();
             endArray[1] = s.getShape().getTwoPoint().getEndPoint().getY();
-            endArray[2] = (int) newPoint.getY();
+            endArray[2] =  newPoint.getY();
 
             g.drawPolygon(startArray, endArray, 3);
         }
     }
     public void draw(Stack<IShape> groupList) {
         if (groupList.isEmpty()) return;
-        if (groupList.lastElement().getShape().isGroup() == true) {
+        if (groupList.lastElement().getShape().isGroup()) {
             drawGroupOutline(groupList);
         } else {
             drawEachOutline(groupList);
@@ -74,16 +74,16 @@ public class OutlineDrawer {
             Point newPoint = new Point(s.getShape().getTwoPoint().getStartPoint().getX(),
                     s.getShape().getTwoPoint().getEndPoint().getY());
 
-            int startArray[] = new int[3];
-            int endArray[] = new int[3];
+            int[] startArray = new int[3];
+            int[] endArray = new int[3];
 
             startArray[0] = s.getShape().getTwoPoint().getStartPoint().getX();
             startArray[1] = s.getShape().getTwoPoint().getEndPoint().getX();
-            startArray[2] = (int) newPoint.getX();
+            startArray[2] = newPoint.getX();
 
             endArray[0] = s.getShape().getTwoPoint().getStartPoint().getY();
             endArray[1] = s.getShape().getTwoPoint().getEndPoint().getY();
-            endArray[2] = (int) newPoint.getY();
+            endArray[2] =  newPoint.getY();
 
             g.drawPolygon(startArray, endArray, 3);
         }
@@ -111,8 +111,7 @@ public class OutlineDrawer {
                 startY = shape.getShape().getTwoPoint().getMinXY().getY();
             }
         }
-        Point minXY = new Point(startX, startY);
-        return minXY;
+        return new Point(startX, startY);
     }
 
     private Point getMaxXY(Stack<IShape> groupList) {
@@ -126,7 +125,6 @@ public class OutlineDrawer {
                 shapeEndY = shape.getShape().getTwoPoint().getMaxXY().getY();
             }
         }
-        Point maxXY = new Point(shapeEndX,shapeEndY);
-        return maxXY;
+        return new Point(shapeEndX,shapeEndY);
     }
 }

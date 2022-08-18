@@ -5,8 +5,6 @@ import model.MovementAlert;
 import model.ShapeList;
 import model.TwoPoint;
 import model.interfaces.ICommand;
-import model.interfaces.IMovementObserver;
-import model.interfaces.IShape;
 import model.interfaces.IStrategy;
 
 import java.util.Stack;

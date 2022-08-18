@@ -8,7 +8,7 @@ import java.util.Stack;
 public class MovementAlert {
 
     private Stack<IShape> observers;
-    private ShapeList shapeList;
+    final private ShapeList shapeList;
 
     public MovementAlert(ShapeList shapeList) {
         this.shapeList = shapeList;

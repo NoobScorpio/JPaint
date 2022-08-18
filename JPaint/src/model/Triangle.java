@@ -8,9 +8,6 @@ public class Triangle implements IShape {
 
     Shape shape;
     private Graphics2D g;
-    private Point thirdPoint;
-    private int[] xPoints;
-    private int[] yPoints;
 
     public Triangle(Shape shape) {
         this.shape = shape;
@@ -19,11 +16,11 @@ public class Triangle implements IShape {
     @Override
     public void draw() {
         g = shape.getPaintCanvas().getGraphics2D();
-        thirdPoint = new Point(shape.getTwoPoint().getStartPoint().getX(),
+        Point thirdPoint = new Point(shape.getTwoPoint().getStartPoint().getX(),
                 shape.getTwoPoint().getEndPoint().getY());
-        xPoints = new int[]{shape.getTwoPoint().getStartPoint().getX(),
+        int[] xPoints = new int[]{shape.getTwoPoint().getStartPoint().getX(),
                 shape.getTwoPoint().getEndPoint().getX(), thirdPoint.getX()};
-        yPoints = new int[]{shape.getTwoPoint().getStartPoint().getY(),
+        int[] yPoints = new int[]{shape.getTwoPoint().getStartPoint().getY(),
                 shape.getTwoPoint().getEndPoint().getY(), thirdPoint.getY()};
         g.setColor(shape.getPrimaryColor());
         if (shape.getShadingType() == ShapeShadingType.FILLED_IN) {
@@ -41,26 +38,6 @@ public class Triangle implements IShape {
     public void clear() {
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, 9999, 9999);
-    }
-
-    @Override
-    public void repaint(Graphics g) {
-        thirdPoint = new Point(shape.getTwoPoint().getStartPoint().getX(),
-                shape.getTwoPoint().getEndPoint().getY());
-        xPoints = new int[]{shape.getTwoPoint().getStartPoint().getX(),
-                shape.getTwoPoint().getEndPoint().getX(), thirdPoint.getX()};
-        yPoints = new int[]{shape.getTwoPoint().getStartPoint().getY(),
-                shape.getTwoPoint().getEndPoint().getY(), thirdPoint.getY()};
-        g.setColor(shape.getPrimaryColor());
-        if (shape.getShadingType() == ShapeShadingType.FILLED_IN) {
-            g.fillPolygon(xPoints, yPoints, 3);
-        } else if (shape.getShadingType() == ShapeShadingType.OUTLINE) {
-            g.drawPolygon(xPoints, yPoints, 3);
-        } else {
-            g.fillPolygon(xPoints, yPoints, 3);
-            g.setColor(shape.getSecondaryColor());
-            g.drawPolygon(xPoints, yPoints, 3);
-        }
     }
 
     @Override

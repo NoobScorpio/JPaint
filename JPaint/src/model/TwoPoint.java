@@ -2,12 +2,8 @@ package model;
 
 
 public class TwoPoint {
-    private Point startPoint;
-    private Point endPoint;
-    private int leftCornerX;
-    private int leftCornerY;
-    private int width;
-    private int height;
+    private final Point startPoint;
+    private final Point endPoint;
 
     public TwoPoint(Point startPoint, Point endPoint) {
         this.startPoint = startPoint;
@@ -17,16 +13,14 @@ public class TwoPoint {
         int mouseStartX = Math.min(this.startPoint.getX(), this.endPoint.getX());
         int mouseStartY = Math.min(this.startPoint.getY(), this.endPoint.getY());
 
-        Point point = new Point(mouseStartX, mouseStartY);
-        return point;
+        return new Point(mouseStartX, mouseStartY);
     }
 
     public Point getMaxXY() {
         int mouseEndX = Math.max(this.startPoint.getX(), this.endPoint.getX());
         int mouseEndY = Math.max(this.startPoint.getY(), this.endPoint.getY());
 
-        Point point = new Point(mouseEndX, mouseEndY);
-        return point;
+        return new Point(mouseEndX, mouseEndY);
     }
     public Point getStartPoint() {
         return startPoint;
@@ -37,23 +31,19 @@ public class TwoPoint {
     }
 
     public int getLeftCornerX() {
-        leftCornerX = Math.min(startPoint.getX(), endPoint.getX());
-        return leftCornerX;
+        return Math.min(startPoint.getX(), endPoint.getX());
     }
 
     public int getLeftCornerY() {
-        leftCornerY = Math.min(startPoint.getY(), endPoint.getY());
-        return leftCornerY;
+        return Math.min(startPoint.getY(), endPoint.getY());
     }
 
     public int getWidth() {
-        width = Math.abs(startPoint.getX() - endPoint.getX());
-        return width;
+        return Math.abs(startPoint.getX() - endPoint.getX());
     }
 
     public int getHeight() {
-        height = Math.abs(startPoint.getY() - endPoint.getY());
-        return height;
+        return Math.abs(startPoint.getY() - endPoint.getY());
     }
 
     public TwoPoint switchPoint() {

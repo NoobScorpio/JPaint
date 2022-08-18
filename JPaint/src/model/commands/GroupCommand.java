@@ -1,9 +1,7 @@
 package model.commands;
-import java.util.Stack;
 import model.GroupShape;
 import model.ShapeList;
 import model.interfaces.ICommand;
-import model.interfaces.IShape;
 
 public class GroupCommand implements ICommand {
     ShapeList shapeList;

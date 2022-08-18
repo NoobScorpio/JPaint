@@ -38,23 +38,6 @@ public class Ellipse implements IShape {
         g.fillRect(0, 0, 9999, 9999);
     }
 
-    @Override
-    public void repaint(Graphics g) {
-        g.setColor(shape.getPrimaryColor());
-        if (shape.getShadingType() == ShapeShadingType.FILLED_IN) {
-            g.fillOval(shape.getTwoPoint().getLeftCornerX(), shape.getTwoPoint().getLeftCornerY(),
-                    shape.getTwoPoint().getWidth(), shape.getTwoPoint().getHeight());
-        } else if (shape.getShadingType() == ShapeShadingType.OUTLINE) {
-            g.drawOval(shape.getTwoPoint().getLeftCornerX(), shape.getTwoPoint().getLeftCornerY(),
-                    shape.getTwoPoint().getWidth(), shape.getTwoPoint().getHeight());
-        } else {
-            g.fillOval(shape.getTwoPoint().getLeftCornerX(), shape.getTwoPoint().getLeftCornerY(),
-                    shape.getTwoPoint().getWidth(), shape.getTwoPoint().getHeight());
-            g.setColor(shape.getSecondaryColor());
-            g.drawOval(shape.getTwoPoint().getLeftCornerX(), shape.getTwoPoint().getLeftCornerY(),
-                    shape.getTwoPoint().getWidth(), shape.getTwoPoint().getHeight());
-        }
-    }
 
     @Override
     public Shape getShape() {
